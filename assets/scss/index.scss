@@ -1,0 +1,39 @@
+// reset
+@import "_reset";
+
+// Variables
+@import "_variables";
+
+// common
+@import "_common";
+
+html {
+  font-size: 62.5%;
+  color: $c_white;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: rem(16);
+  line-height: 2;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: $c_white;
+}
+
+p {
+  margin: 0;
+  font-size: rem(16);
+  line-height: 2;
+}
+
+video {
+  width: 100%;
+}

@@ -1,73 +1,61 @@
-<template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        portfolio
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  .container
+      h1.ttl Portfolio
 </template>
 
 <script>
-export default {}
+import { mapGetters, mapActions } from "vuex";
+export default {
+  computed: {
+    ...mapGetters({
+      isLoading: "opening/isLoading"
+    })
+  },
+  watch: {
+    isLoading: async function(next, prev) {
+      if (!next && prev) {
+        // ここに好きなアニメーションとかの処理
+        console.log("aaa");
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener("load", async () => {
+      await this.$delay(1000); // PromiseでsetTimeOut返すプラグインです
+      this.endLoding();
+    });
+  },
+  methods: {
+    ...mapActions({
+      endLoding: "opening/endLoding"
+    })
+  }
+};
 </script>
 
-<style>
+<style lang="scss">
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  max-width: 1200px;
+  margin: rem(56) auto rem(56) auto;
+  padding: 0 rem(16);
+}
+
+h1 {
+  font-family: "Petit Formal Script", cursive, "Playfair Display",
+    "Noto Serif JP", serif;
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  // transform: translate(-50%, -50%);
+  font-family: "Petit Formal Script", cursive, "Playfair Display",
+    "Noto Serif JP", serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
+  font-size: 50px;
   letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  // color: $c_white;
 }
 </style>

@@ -1,0 +1,19 @@
+//colors
+$c_white: #ffffff;
+$c_black: #3b3b3b;
+$c_backBlack: rgba(
+  $color: #000000,
+  $alpha: 0.8
+);
+
+//flexbox
+@mixin flex-style($justify: start, $align: normal) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// px to rem
+@function rem($px, $base: 10) {
+  @return $px / $base * 1rem;
+}
