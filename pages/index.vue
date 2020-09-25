@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      endLoding: "opening/endLoding"
+      endLoding: "opening/endLoading"
     })
   }
 };
@@ -40,18 +40,13 @@ export default {
   padding: 0 rem(16);
 }
 
-h1 {
-  font-family: "Petit Formal Script", cursive, "Playfair Display",
-    "Noto Serif JP", serif;
-}
-
 .title {
   position: fixed;
   top: 45%;
   left: 50%;
   // transform: translate(-50%, -50%);
-  font-family: "Petit Formal Script", cursive, "Playfair Display",
-    "Noto Serif JP", serif;
+  // font-family: "Petit Formal Script", cursive, "Playfair Display",
+  //   "Noto Serif JP", serif;
   display: block;
   font-weight: 300;
   font-size: 50px;

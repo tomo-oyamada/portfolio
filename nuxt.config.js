@@ -15,8 +15,7 @@ export default {
    */
   head: {
     title: process.env.npm_package_name || "",
-    meta: [
-      {
+    meta: [{
         charset: "utf-8"
       },
       {
@@ -29,21 +28,18 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [
-      {
+    link: [{
         rel: "icon",
         type: "image/x-icon",
         href: "/favicon.ico"
       },
       {
         rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Petit+Formal+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href: "https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Petit+Formal+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       },
       {
         rel: "stylesheet",
-        href:
-          "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css"
+        href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css"
       }
     ]
   },
@@ -86,6 +82,11 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
+  loadingIndicator: {
+    name: 'cube-grid',
+    color: '#fff',
+    background: '#333'
+  },
   build: {
     extend(config, ctx) {
       if (!!config.module) {

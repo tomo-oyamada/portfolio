@@ -5,3 +5,10 @@
     font-size: rem(24);
   }
 }
+
+.subttl {
+  font-weight: bold;
+  padding-left: rem(16);
+  font-size: rem(24);
+  border-left: 4px solid $c_white;
+}
